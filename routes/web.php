@@ -20,13 +20,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[FrontController::class,'index']);
 
+
 Route::get('/hi',[FrontController::class,'hi']);
 
-// Route::get('/hi', function () {
-//     $name = 'jang';
-//     $age = 18;
-//     $gender = 'female';
 
-//     dd(compact('name','age','gender'));
+  
 //     return view('hi',compact('name','age','gender'));
-// });
