@@ -19,6 +19,7 @@ class FrontController extends Controller
         $gender = 'female';
     
         // dd(compact('name','age','gender'));
+        // return view('hi',['name' => $name,'age' => $age,'gender' => $gender]);
         return view('hi',compact('name','age','gender'));
     }
 
