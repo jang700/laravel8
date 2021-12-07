@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>hi,{{$name}}</h2>
+    <h2>hi,{{$name}},{{$age}},{{$gender}}</h2>
     
 </body>
 </html>
