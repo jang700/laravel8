@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+
+Route::get('/',[FrontController::class,'index']);
+
+Route::get('/hi',[FrontController::class,'hi']);
+
+// Route::get('/hi', function () {
+//     $name = 'jang';
+//     $age = 18;
+//     $gender = 'female';
+
+//     dd(compact('name','age','gender'));
+//     return view('hi',compact('name','age','gender'));
+// });
