@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FrontController extends Controller
 {
@@ -23,4 +24,21 @@ class FrontController extends Controller
         return view('hi',compact('name','age','gender'));
     }
 
+    public function news()
+    {   
+        $news = DB::table('news')->get();
+        // dd($news);
+        return view('news',compact('news'));
+    }
+
+    public function newsContent($id) 
+    {
+        // $news = DB::table('news')->where('id',$id)->first();
+        // dd($news->title);
+
+        $news = DB::table('news')->find($id);
+        return view('news-content',compact('news'));
+    }
+    
+    
 }

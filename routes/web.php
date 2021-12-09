@@ -17,11 +17,18 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('index');
 // });
+// Route::get('/news', function () {
+//        return view('news');
+// });
 
 Route::get('/',[FrontController::class,'index']);
 
 
 Route::get('/hi',[FrontController::class,'hi']);
+
+Route::get('/news',[FrontController::class,'news']);
+
+Route::get('/news/{id}',[FrontController::class,'newsContent']);
 
 
   
