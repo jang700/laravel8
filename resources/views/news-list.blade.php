@@ -1,13 +1,13 @@
 @extends('layouts.template')
 
 @section('css')
-  <link rel="stylesheet" href=" {{asset('css/css/list-page.css')}}">
+  <link rel="stylesheet" href="{{asset('css/list-page.css')}}">
 @endsection
 
 @section('main')
 <header class="container header">
     <div class="title">
-        <img src="./images/images/icon.svg" alt="">
+        <img src="./images/icon.svg" alt="">
         <h2>最新消息</h2>
     </div>
     <div class="page-info">
@@ -31,13 +31,17 @@
         <div class="img" style="background-image: url({{$item->image_url}})"></div>
         <div class="content">
             <span class="tag">最新消息</span>
-            <a href="/news/{{$item->id}}">{{$item->title}}</a>
+            <a href="">{{$item->title}}</a>
             <span class="date">{{$item->date}}</span>
             <p>{{$item->content}}</p>
         </div>
     </div>
     @endforeach
-   
+    
 </section>
+@endsection
+
+
+@section('js')
     
 @endsection
