@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\FrontController;
+use App\Http\Controllers\NewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,38 +16,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('index');
-// });
-// Route::get('/news', function () {
-//        return view('news');
-// });
-
 Route::get('/',[FrontController::class,'index']);
 
+// prefixf前綴，可省略/news
+Route::prefix('/news')->group(function (){
+    Route::get('/',[FrontController::class,'newsList']);
+    Route::get('/{id}',[FrontController::class,'newsContent']);
 
-Route::get('/hi',[FrontController::class,'hi']);
-
-Route::get('/news',[FrontController::class,'news']);
-
-Route::get('/news/{id}',[FrontController::class,'newsContent']);
-Route::get('/create-news',[FrontController::class,'createNews']);
-Route::get('/store-news',[FrontController::class,'storeNews']);
-
-
-Route::get('/update-news/{id}',[FrontController::class,'updateNews']);
-
-Route::get('/destroy-news/{id}',[FrontController::class,'destroyNews']);
+});
 
 Route::post('/contact',[FrontController::class,'contact']);
-
-// 作業 試做
-Route::get('/product',[FrontController::class,'product']);
-
-  
-//     return view('hi',compact('name','age','gender'));
-
 
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+// 後台
+Route::prefix('/admin')->group(function (){
+    // 最新消息
+    Route::prefix('/news')->group(function (){
+        // 後台列表頁
+        Route::get('/',[NewsController::class,'index']);
+    });
+});

@@ -24,7 +24,7 @@
     <!-- nav bar -->
     <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{asset('/')}} ">
                 <img src="{{asset('images/logo.svg')}}" width="106" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -37,7 +37,7 @@
                         <a class="nav-link" href="{{asset('/news')}}">News</a>
                     </li>
                     <li class="nav-item d-flex justify-content-center">
-                        <a class="nav-link" href="{{asset('/store-news')}}">聯絡表</a>
+                        <a class="nav-link" href="{{asset('/store-news')}}">news-create</a>
                     </li>
                     <li class="nav-item d-flex justify-content-center">
                         <a class="nav-link" href="#">About</a>
