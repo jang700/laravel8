@@ -15,7 +15,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- layout Core CSS -->
     <link rel="stylesheet" href="{{asset('css/layout.css')}}">
-     
+    
+    {!! htmlScriptTagJsApi() !!}
     @yield('css')
 </head>
 
@@ -34,10 +35,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item d-flex justify-content-center">
-                        <a class="nav-link" href="{{asset('/news')}}">News</a>
+                        <a class="nav-link" href="{{route('news.list')}}">News</a>
                     </li>
                     <li class="nav-item d-flex justify-content-center">
-                        <a class="nav-link" href="{{asset('/store-news')}}">news-create</a>
+                        <a class="nav-link" href="{{route('facility')}}">facility</a>
                     </li>
                     <li class="nav-item d-flex justify-content-center">
                         <a class="nav-link" href="#">About</a>
